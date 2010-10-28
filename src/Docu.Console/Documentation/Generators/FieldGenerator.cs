@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Docu.Parsing.Comments;
 using Docu.Parsing.Model;
+using System;
 
 namespace Docu.Documentation.Generators
 {
@@ -30,7 +31,7 @@ namespace Docu.Documentation.Generators
             ParseRemarks(association, doc);
             ParseExample(association, doc);
 
-            matchedAssociations.Add(association.Name, doc);
+            matchedAssociations[association.Name] = doc;
             type.AddField(doc);
         }
     }
